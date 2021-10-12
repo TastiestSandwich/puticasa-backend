@@ -19,7 +19,7 @@ from rest_framework import routers
 from puticasa import views
 
 router = routers.DefaultRouter()
-router.register(r'houses', views.HouseView, 'house')
+router.register('houses', views.HouseView, 'house')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
