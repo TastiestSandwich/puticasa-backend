@@ -22,7 +22,7 @@ class House(models.Model):
     last_modified_date = models.DateTimeField(auto_now=True)
     end_date = models.DateTimeField(blank=True, null=True)
 
-    users = models.ManyToManyField(User, through='Resident')
+    # users = models.ManyToManyField(User, through='Resident')
 
     def __str__(self):
         return self.name

@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import House, Resident
-from users.models import User
 from users.serializers import UserSerializer
 
 
@@ -15,8 +14,15 @@ class HouseSerializer(serializers.ModelSerializer):
 
 
 class ResidentSerializer(serializers.ModelSerializer):
-    house = HouseSerializer(read_only=True, many=True)
-    user = UserSerializer(read_only=True, many=True)
+    house = HouseSerializer(read_only=True, many=False)
+    user = UserSerializer(read_only=True, many=False)
+
+    class Meta:
+        model = Resident
+        fields = ('id', 'user', 'house', 'type', 'status', 'last_modified_date', 'start_date', 'end_date')
+
+
+class ResidentJSONSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Resident
