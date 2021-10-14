@@ -19,8 +19,8 @@ from rest_framework import routers
 from puticasa import views
 
 router = routers.DefaultRouter()
-router.register(r'houses', views.HouseView, 'house')
-router.register(r'residents', views.ResidentView, 'resident')
+router.register(r'houses', views.HouseView, basename='house')
+router.register(r'residents', views.ResidentView, basename='resident')
 
 urlpatterns = [
     path('admin/', admin.site.urls),

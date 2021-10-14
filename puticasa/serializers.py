@@ -5,9 +5,6 @@ from users.serializers import UserSerializer
 
 class HouseSerializer(serializers.ModelSerializer):
 
-    def to_representation(self, value):
-        return value.__str__
-
     class Meta:
         model = House
         fields = ('id', 'name', 'description', 'status', 'last_modified_date', 'start_date', 'end_date')
